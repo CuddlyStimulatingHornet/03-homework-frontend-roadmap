@@ -1,0 +1,28 @@
+.quote {
+  margin-block: 100px;
+
+  @include tablet {
+    margin-block: 50px;
+  }
+
+  &__item {
+    padding: 46px 95px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font-weight: 400;
+    text-align: center;
+    transition-duration: var(--transition-duration);
+
+    @include fluid-text(40, 28);
+
+    @include hover {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+      transform: scale(1.05);
+    }
+
+    @include tablet {
+      padding: 24px 24px;
+    }
+  }
+}

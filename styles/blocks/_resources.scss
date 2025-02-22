@@ -1,0 +1,130 @@
+.resources {
+  margin-block: 100px;
+
+  @include tablet {
+    margin-block: 50px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    margin-left: 42px;
+    text-decoration: underline;
+
+    @include tablet {
+      margin-left: 12px;
+      margin-bottom: 14px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    margin-left: 42px;
+
+    @include tablet {
+      margin-left: 12px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 23px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 290px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 23px 25px;
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+
+    &-divider {
+      margin-bottom: 13px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-dark);
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--color-dark);
+        left: 0;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--color-dark);
+        right: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 32px;
+    padding-inline: 25px;
+    border-radius: var(--border-radius);
+    color: var(--color-light);
+    font-size: 16px;
+
+    &.first {
+      background-color: var(--color-accent-cold);
+    }
+
+    &.second {
+      background-color: var(--color-accent-cold-alt);
+    }
+
+    &.third {
+      background-color: var(--color-accent-warm);
+    }
+
+    &.forth {
+      background-color: var(--color-accent-warm-alt);
+    }
+
+    @include hover {
+      background-color: var(--color-dark);
+    }
+
+    &-wrap {
+      margin-bottom: 57px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 3px;
+      width: 32px;
+      height: 32px;
+      border: var(--border);
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+:root {
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-accent-cold: #0575b4;
+  --color-accent-cold-alt: #067c87;
+  --color-accent-warm: #0d8500;
+  --color-accent-warm-alt: #017a50;
+
+  --border: 1px solid var(--color-dark);
+  --border-radius: 35px;
+
+  --font-family-base: "JetBrains Mono", sans-serif;
+
+  --container-width: 1300px;
+  --container-padding-x: 20px;
+
+  --section-padding-y: 50px;
+
+  --transition-duration: 0.2s;
+}

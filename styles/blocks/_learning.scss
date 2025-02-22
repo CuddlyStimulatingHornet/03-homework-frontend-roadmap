@@ -1,0 +1,62 @@
+.learning {
+  margin-block: 100px;
+  display: flex;
+  gap: 80px;
+
+  @include tablet {
+    margin-block: 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    margin-left: 42px;
+
+    @include tablet {
+      margin-left: 12px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-decoration: underline;
+
+    @include tablet {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__image {
+    max-width: 696px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    // @include tablet {
+    //   order: -1;
+    // }
+  }
+
+  &__button {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    @include hover {
+      background-color: var(--color-accent-cold-alt);
+      transform: scale(1.1);
+    }
+  }
+}

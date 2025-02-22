@@ -1,0 +1,230 @@
+.header {
+  margin-top: 50px;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+    border-top: var(--border);
+    border-bottom: var(--border);
+
+    @include tablet {
+      height: 70px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 83px;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+
+    @include tablet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      padding-top: 300px;
+      z-index: 1;
+      flex-direction: column;
+      text-align: center;
+
+      top: -100vh;
+      right: 100vw;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 70px;
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 97%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 4px;
+      border-radius: 30px;
+      background-color: var(--color-dark);
+      transition-duration: inherit;
+    }
+  }
+
+  &__link.is-current::after {
+    content: "";
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    translate: -50%;
+    width: 100%;
+    height: 4px;
+    border-radius: 30px;
+    background-color: var(--color-dark);
+  }
+
+  &__socials {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__socials-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 17px;
+  }
+
+  &__socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-duration) ease;
+
+    @include hover {
+      color: var(--color-accent-cold);
+      transform: scale(1.1);
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include tablet {
+      position: relative;
+      display: block;
+      height: 25px;
+      width: 30px;
+      z-index: 2;
+    }
+
+    &::before,
+    &::after,
+    span {
+      @include tablet {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: rgb(0, 0, 0);
+        transition: 0.3s;
+        border-radius: var(--border-radius);
+      }
+    }
+
+    &::before {
+      @include tablet {
+        content: "";
+        top: 0;
+      }
+    }
+
+    &::after {
+      @include tablet {
+        content: "";
+        bottom: 0;
+      }
+    }
+
+    span {
+      top: 11px;
+    }
+
+    &-toggle {
+      display: none;
+
+      &:checked {
+        & + .header__burger {
+          &::after {
+            transform: rotate(45deg);
+            bottom: 10px;
+          }
+
+          &::before {
+            transform: rotate(-45deg);
+            top: 12px;
+          }
+
+          span {
+            transform: rotate(-45deg);
+            top: 12px;
+          }
+        }
+
+        & ~ .header__nav .header__menu {
+          left: 0;
+          right: 0;
+          top: 70px;
+          z-index: 1;
+          opacity: 1;
+          transform: translate(0.3s);
+          transition: opacity 0.3s ease, transform 0.3 ease;
+        }
+      }
+    }
+  }
+
+  &__burger-button {
+    @include tablet-above {
+      display: none;
+    }
+
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    aspect-ratio: 1;
+
+    position: relative;
+    border-radius: var(--border-radius);
+
+    @include hover {
+      background-color: #777777;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+
+      content: "";
+      width: 50%;
+      height: 2px;
+      background-color: var(--color-dark);
+      border-radius: 5px;
+      box-shadow: 0 -8px, 0 8px;
+    }
+  }
+}

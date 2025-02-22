@@ -1,0 +1,72 @@
+.hero {
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+  @include tablet {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  &__inner {
+    min-height: 484px;
+    background-image: url("../images/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: 62px 42px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include tablet {
+      min-height: 440px;
+      padding: 40px 28px;
+      row-gap: 15px;
+    }
+  }
+
+  &__title {
+    line-height: 100%;
+    max-width: 1141px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 770px;
+    line-height: 125%;
+  }
+
+  &__button {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+
+    &-arrow {
+      color: #c9730c;
+
+      @include tablet {
+        color: #4d0000;
+      }
+    }
+
+    @include hover {
+      background-color: #ffdd9c;
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.roadmap {
+  margin-block: 100px;
+
+  @include tablet {
+    margin-block: 50px;
+  }
+
+  &__title {
+    margin-left: 42px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+
+    @include tablet {
+      margin-left: 12px;
+      margin-bottom: 14px;
+    }
+  }
+
+  &__text {
+    margin-left: 42px;
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-left: 12px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__steps {
+    display: flex;
+    column-gap: 33px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    min-height: 283px;
+    padding: 30px 34px;
+    color: var(--color-light);
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
+    transition: var(--transition-duration) ease;
+
+    @include tablet {
+      min-height: auto;
+    }
+
+    @include mobile-above {
+      min-width: 380px;
+    }
+
+    @include hover {
+      transform: scale(1.06);
+    }
+
+    &.first {
+      background-image: url(../images/bg-step-1st.jpg);
+    }
+
+    &.second {
+      background-image: url(../images/bg-step-2nd.jpg);
+    }
+
+    &.third {
+      background-image: url(../images/bg-step-3rd.jpg);
+    }
+
+    &-title {
+      margin-bottom: 66px;
+      display: inline-flex;
+      max-width: 300px;
+      // font-size: 36px;
+    }
+    &-divider {
+      margin-bottom: 13px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: auto;
+      height: 1px;
+      background-color: var(--color-light);
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--color-light);
+        left: 0;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--color-light);
+        right: 0;
+      }
+    }
+    &-text {
+      font-size: 16px;
+    }
+  }
+}
